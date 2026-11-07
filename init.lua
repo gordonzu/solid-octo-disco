@@ -13,9 +13,12 @@ vim.g.mapleader = " "
 
 -------------------------------------------------------------------------------
 vim.pack.add({ { src = "https://github.com/vague2k/vague.nvim" } })
-vim.cmd("colorscheme vague")
+--vim.cmd("colorscheme vague")
 vim.cmd(":hi statusline guibg=NONE")
 
+vim.pack.add({ { src = "https://github.com/folke/tokyonight.nvim" } })
+vim.pack.add({ { src = "https://github.com/rebelot/kanagawa.nvim" } })
+vim.cmd("colorscheme kanagawa")
 --------------------------------------------------------------------------------
 vim.pack.add({ { src = "https://github.com/stevearc/oil.nvim" } })
 require("oil").setup({
