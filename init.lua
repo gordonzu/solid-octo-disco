@@ -23,8 +23,11 @@ vim.g.material_style = "deep ocean"
 --vim.g.material_style = "lighter"
 --vim.g.material_style = "darker"
 
+vim.pack.add({ { src = "https://github.com/savq/melange-nvim" } })
 vim.pack.add({ { src = "https://github.com/folke/tokyonight.nvim" } })
 vim.pack.add({ { src = "https://github.com/rebelot/kanagawa.nvim" } })
+--vim.cmd("colorscheme kanagawa-wave")
+--vim.cmd("colorscheme kanagawa-dragon")
 vim.cmd("colorscheme kanagawa-lotus")
 
 --------------------------------------------------------------------------------

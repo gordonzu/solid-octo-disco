@@ -57,6 +57,10 @@
       "rev": "92f7366a9315cd386bc4fa4d716fde375dda210f",
       "src": "https://github.com/marko-cerovac/material.nvim"
     },
+    "melange-nvim": {
+      "rev": "ce42f6b629beeaa00591ba73a77d3eeac4cf28ce",
+      "src": "https://github.com/savq/melange-nvim"
+    },
     "nvim-autopairs": {
       "rev": "3172f40c16563db871a58f20d205c710ad782311",
       "src": "https://github.com/windwp/nvim-autopairs"
