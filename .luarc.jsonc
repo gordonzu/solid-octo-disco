@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LuaLS/LuaLS/master/setting/schema.json",
+  "Lua": {
+    "runtime": {
+      "version": "LuaJIT"
+    },
+    "diagnostics": {
+      "globals": [
+        "vim"
+      ]
+    },
+    "workspace": {
+      "checkThirdParty": false,
+      "library": [
+        "${3rd}/luv/library"
+      ]
+    },
+    "telemetry": {
+      "enable": false
+    }
+  }
+}
