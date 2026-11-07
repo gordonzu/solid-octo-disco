@@ -14,11 +14,19 @@ vim.g.mapleader = " "
 -------------------------------------------------------------------------------
 vim.pack.add({ { src = "https://github.com/vague2k/vague.nvim" } })
 --vim.cmd("colorscheme vague")
-vim.cmd(":hi statusline guibg=NONE")
+--vim.cmd(":hi statusline guibg=NONE")
+
+vim.pack.add({ { src = "https://github.com/marko-cerovac/material.nvim" } })
+vim.g.material_style = "deep ocean"
+--vim.g.material_style = "pale night"
+--vim.g.material_style = "oceanic"
+--vim.g.material_style = "lighter"
+--vim.g.material_style = "darker"
 
 vim.pack.add({ { src = "https://github.com/folke/tokyonight.nvim" } })
 vim.pack.add({ { src = "https://github.com/rebelot/kanagawa.nvim" } })
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme kanagawa-lotus")
+
 --------------------------------------------------------------------------------
 vim.pack.add({ { src = "https://github.com/stevearc/oil.nvim" } })
 require("oil").setup({
@@ -60,7 +68,6 @@ require("oil").setup({
 		"mtime",
 	},
 })
-vim.keymap.set("n", "-", "<CMD>Oil --float<CR>")
 
 -------------------------------------------------------------------------------
 vim.pack.add({ { src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" } })
@@ -317,6 +324,7 @@ vim.pack.add({ { src = "https://codeberg.org/FelipeLema/cmp-async-path.git" } })
 vim.pack.add({ { src = "https://github.com/folke/which-key.nvim" } })
 
 -------------------------------------------------------------------------------
+vim.keymap.set("n", "-", "<CMD>Oil --float<CR>")
 vim.keymap.set("n", "<leader>/", "<cmd>gcc<CR>", { desc = "toggle nvcheatsheet" })
 vim.keymap.set("v", "<leader>/", "<cmd>gc<CR>", { desc = "toggle nvcheatsheet" })
 vim.keymap.set("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
@@ -345,7 +353,7 @@ vim.keymap.set("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all k
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
 vim.keymap.set(
 	"n",
-	"<leader>fa",
+	"<leader>ff",
 	"<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
 	{ desc = "telescope find all files" }
 )
