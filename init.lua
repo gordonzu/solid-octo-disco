@@ -149,6 +149,36 @@ require("nvim-treesitter").setup(opts)
 
 -------------------------------------------------------------------------------
 vim.pack.add({
+	{ src = "https://github.com/hrsh7th/nvim-cmp" },
+	{ src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
+	{ src = "https://github.com/L3MON4D3/LuaSnip" },
+})
+
+local cmp = require("cmp")
+cmp.setup({
+	snippet = {
+		expand = function(args)
+			require("luasnip").lsp_expand(args.body)
+		end,
+	},
+	mapping = cmp.mapping.preset.insert({
+		["<C-Space>"] = cmp.mapping.complete(),
+		["<C-e>"] = cmp.mapping.abort(),
+		["<C-n>"] = cmp.mapping.select_next_item(),
+		["<C-p>"] = cmp.mapping.select_prev_item(),
+		["<CR>"] = cmp.mapping.confirm({ select = false }),
+	}),
+	sources = {
+		{ name = "nvim_lsp" },
+	},
+})
+
+vim.lsp.config("*", {
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+})
+
+-------------------------------------------------------------------------------
+vim.pack.add({
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
@@ -310,18 +340,11 @@ vim.pack.add({ { src = "https://github.com/lukas-reineke/indent-blankline.nvim" 
 vim.pack.add({ { src = "https://github.com/lewis6991/gitsigns.nvim" } })
 
 -------------------------------------------------------------------------------
-vim.pack.add({ { src = "https://github.com/hrsh7th/nvim-cmp" } })
-
--------------------------------------------------------------------------------
-vim.pack.add({ { src = "https://github.com/L3MON4D3/LuaSnip" } })
-
--------------------------------------------------------------------------------
 vim.pack.add({ { src = "https://github.com/windwp/nvim-autopairs" } })
 
 -------------------------------------------------------------------------------
 vim.pack.add({ { src = "https://github.com/saadparwaiz1/cmp_luasnip" } })
 vim.pack.add({ { src = "https://github.com/hrsh7th/cmp-nvim-lua" } })
-vim.pack.add({ { src = "https://github.com/hrsh7th/cmp-nvim-lsp" } })
 vim.pack.add({ { src = "https://github.com/hrsh7th/cmp-buffer" } })
 vim.pack.add({ { src = "https://codeberg.org/FelipeLema/cmp-async-path.git" } })
 vim.pack.add({ { src = "https://github.com/folke/which-key.nvim" } })
